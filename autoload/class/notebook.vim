@@ -70,7 +70,7 @@ function! s:class.SetBasedir(pBasedir) dict abort "{{{
     endif
 
     if !isdirectory(a:pBasedir)
-        :DLOG '? set notebook to directory that not exists: ' . a:pBasedir
+        echo '? set notebook to directory that not exists: ' . a:pBasedir
     endif
 
     let self.basedir = a:pBasedir
@@ -344,7 +344,7 @@ endfunction "}}}
 " Foot: {{{1
 " LOAD:
 let s:load = 1
-:DLOG 'class#notebook is loading ...'
+" :DLOG 'class#notebook is loading ...'
 function! class#notebook#load(...) abort "{{{
     if a:0 > 0 && !empty(a:1) && exists('s:load')
         unlet s:load
